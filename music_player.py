@@ -128,7 +128,23 @@ class MusicPlayer:
         rand_color2 = choice(self.color_list)
         main_img.config(bg=rand_color2)
         main_img.after(250, self.change_colrbg)
-
+    def add_dir(self, x):
+        ch_dir_name = filedialog.askdirectory()
+        if ch_dir_name!= '':
+            for songs in range(len(cl.a)):
+                list_song.delete(tkinter.END)
+            os.chdir(ch_dir_name)
+            self.a = os.listdir()
+            for i in self.a:
+                c = i.split('.')[1:]
+                for j in c:
+                    if j != 'mp3' and j != 'wav' and j != 'ogg' and j==' ':
+                        self.a.pop(self.a.index(i))
+            for songs in range(len(cl.a)):
+                ins = cl.a[songs].split('.')[1:]
+                for o in ins:
+                    if o == 'mp3' or o == 'wav' or o == 'ogg':
+                        list_song.insert(songs, cl.a[songs])
     def open_file(self, x):
         file_name = filedialog.askopenfilename()
         try:
@@ -354,6 +370,10 @@ if __name__ == '__main__':
     btn10.place(x=345, y=0)
     btn10.bind('<Button-1>', cl.sleep)
     btn20.bind('<Button-1>', cl.open_file)
+    img67 = tkinter.PhotoImage(file=f'{cwd}\\New folder (2)\\plus.png')
+    btn67 = Label(image=img67)
+    btn67.place(x=0, y=220)
+    btn67.bind('<Button-1>', cl.add_dir)
     for songs in range(len(cl.a)):
         ins = cl.a[songs].split('.')[1:]
         for o in ins:
