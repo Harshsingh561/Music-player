@@ -4,7 +4,7 @@ This is a music player gui created by me this is a fun project so code will not 
                   HOW TO USE
               When the screen pop ups there will be many 
               songs which is preinstalled when you are going to 
-              downlad this code.
+              download this code.
               
               On right side of the screen there will be list of songs
               you can double click on anyone of them to play the song.
