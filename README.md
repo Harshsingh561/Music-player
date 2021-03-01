@@ -2,6 +2,8 @@
 This is a music player gui created by me this is a fun project so code will not look that much professional.
 
                   HOW TO USE
+              Required module: pygame => To install It type: pip install pygame-python
+              
               When the screen pop ups there will be many 
               songs which is preinstalled when you are going to 
               download this code.
