@@ -17,7 +17,7 @@ def p(x):
     print('Hii')
 class MusicPlayer:
     def __init__(self):
-        os.chdir("C:\\Users\\DELL\\My_music")
+        os.chdir(r"C:\Users\DELL\Desktop\Music_player\My_music")
         self.i = 0
         self.a = os.listdir()
         for i in self.a:
@@ -310,7 +310,7 @@ class MusicPlayer:
         if self.p_unp !='Resume':
             mixer.music.pause()
             self.p_unp='Resume'
-            self.img = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\pause.png')
+            self.img = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\pause.png')
             btn.config(image=self.img)
         else:
             mixer.music.unpause()
@@ -321,7 +321,7 @@ class MusicPlayer:
             mixer.music.set_volume(0)
             volume.set(0)
             self.m_unm = 'UnMute'
-            self.img1 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\mute (1).png')
+            self.img1 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\mute (1).png')
             btn6.config(image=self.img1)
         else:
             if self.vol != None:
@@ -338,7 +338,7 @@ class MusicPlayer:
         mixer.music.set_volume(vol2)
         if vol2==0:
             self.m_unm = 'UnMute'
-            self.img1 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\mute (1).png')
+            self.img1 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\mute (1).png')
             btn6.config(image=self.img1)
         else:
             self.m_unm = 'Mute'
@@ -378,7 +378,7 @@ if __name__ == '__main__':
     cl = MusicPlayer()
     mixer.init()
     vol = mixer.music.get_volume()
-    image = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\music.gif')
+    image = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\music.gif')
     main_img = tkinter.Label(root, image=image, borderwidth=5)
     main_img.place(x=0, y=0)
     scrl = Scrollbar(root)
@@ -389,33 +389,33 @@ if __name__ == '__main__':
     music_playing= tkinter.Label(root, font="Arial 14 bold")
     music_playing.place(x=10, y=250)
     music_playing.bind('<Double-1>', cl.rewind)
-    img11 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\sound.png')
+    img11 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\sound.png')
     btn6 = Label(root, image=img11)
     btn6.place(x=0, y=330)
     btn6.bind('<Button-1>', cl.mute_unmute)
     volume = Scale(root, from_=0, to=100, orient=tkinter.HORIZONTAL, command=cl.volume, length=150)
     volume.place(x=40, y=335)
     volume.set(25)
-    img = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\play.png')
+    img = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\play.png')
     btn = tkinter.Label(image=img)
     btn.place(x=240, y=330)
     btn.bind('<Button-1>', cl.pause_unpause)
-    img44 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\rewind.png')
+    img44 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\rewind.png')
     btn3 = Label(image=img44)
     btn3.place(x=340, y=330)
     btn3.bind('<Button-1>', cl.rewind)
-    img3 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\next.png')
+    img3 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\next.png')
     btn5=Label(image=img3)
     btn5.place(x=290, y=330)
     btn5.bind('<Button-1>', cl.after)
-    img2 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\previous.png')
+    img2 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\previous.png')
     btn4=Label(image=img2)
     btn4.place(x=190, y=330)
     btn4.bind('<Button-1>', cl.before)
-    img20 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\music-note.png')
+    img20 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\music-note.png')
     btn20=Label(image=img20)
     btn20.place(x=0, y=0)
-    img10 = tkinter.PhotoImage(file=r'C:\Users\DELL\New folder (2)\night-mode.png')
+    img10 = tkinter.PhotoImage(file=r'C:\Users\DELL\Desktop\Music_player\New folder (2)\night-mode.png')
     btn10 = Label(image=img10)
     btn10.place(x=345, y=0)
     btn10.bind('<Button-1>', cl.sleep)
