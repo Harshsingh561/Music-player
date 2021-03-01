@@ -21,3 +21,6 @@ This is a music player gui created by me this is a fun project so code will not 
               You can rewind music by clicking on rewind button or by double clicking on the text which shows which song is playing.
               
               To mute or unmute the song you can click on the sound Button.
+
+
+Contribute in this code to make it better.
