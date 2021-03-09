@@ -1,6 +1,7 @@
 import tkinter
 from tkinter.ttk import *
 import os
+from tkinter import messagebox
 from pygame import mixer
 from random import choice
 from tkinter import filedialog
@@ -11,6 +12,7 @@ root = tkinter.Tk()
 root.geometry("700x370")
 root.minsize(700, 370)
 root.maxsize(700, 370)
+root.resizable(False, False)
 root.iconbitmap(f"{cwd}\\New folder (2)\\music_player_1.ico")
 root.title("Music Player (Harsh)")
 
@@ -18,7 +20,7 @@ root.title("Music Player (Harsh)")
 class MusicPlayer:
     def __init__(self):
         os.chdir(f"{cwd}\\My_music")
-        self.i = 0
+        self.i = -1
         self.a = os.listdir()
         for i in self.a:
             c = i.split('.')[1:]
@@ -137,9 +139,9 @@ class MusicPlayer:
             self.a = os.listdir()
             for i in self.a:
                 c = i.split('.')[1:]
-                for j in c:
-                    if j != 'mp3' and j != 'wav' and j != 'ogg' and j==' ':
-                        self.a.pop(self.a.index(i))
+                if c != ['mp3'] and c != ['wav'] and c != ['ogg']:
+                    del self.a[self.a.index(i)]
+                self.i = 0
             for songs in range(len(cl.a)):
                 ins = cl.a[songs].split('.')[1:]
                 for o in ins:
@@ -188,7 +190,10 @@ class MusicPlayer:
         try:
             self.i += 1
             mixer.init()
-            mixer.music.load(self.a[self.i])
+            try:
+                mixer.music.load(self.a[self.i])
+            except Exception as e:
+                self.i -= len(self.a)
             mixer.music.play(mixer.music.get_pos())
             if self.p_unp == 'Resume':
                 self.p_unp = 'Pause'
