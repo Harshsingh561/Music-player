@@ -159,11 +159,11 @@ class MusicPlayer:
             var1 = os.path.split(file_name)
             var2 = var1[1:]
             for q in var2:
-                if len(q)<=30:
+                if len(q)<=36:
                     music_playing.config(text=q)
                     self.loaded = q
                 else:
-                    a = q[:30]
+                    a = q[:36]
                     a+='....'
                     music_playing.config(text=a)
                     self.loaded = a
@@ -188,10 +188,10 @@ class MusicPlayer:
         if self.open_file2 == 'Opened':
             music_playing.config(text=self.loaded)
         else:
-            if len(self.a[self.i])<=30:
+            if len(self.a[self.i])<=36:
                 music_playing.config(text=self.a[self.i])
             else:
-                a = self.a[self.i][:30]
+                a = self.a[self.i][:36]
                 a+='....'
                 music_playing.config(text=a)
 
@@ -217,10 +217,10 @@ class MusicPlayer:
             if self.p_unp == 'Resume':
                 self.p_unp = 'Pause'
                 btn.config(image=img)
-        if len(self.a[self.i])<=30:
+        if len(self.a[self.i])<=36:
             music_playing.config(text=self.a[self.i])
         else:
-            a = self.a[self.i][:30]
+            a = self.a[self.i][:36]
             a+='....'
             music_playing.config(text=a)
         rand_color = choice(self.color_list)
@@ -259,10 +259,10 @@ class MusicPlayer:
                     mixer.init()
                     mixer.music.load(self.a[self.i])
                     mixer.music.play(mixer.music.get_pos())
-        if len(self.a[self.i])<=30:
+        if len(self.a[self.i])<=36:
             music_playing.config(text=self.a[self.i])
         else:
-            a = self.a[self.i][:30]
+            a = self.a[self.i][:36]
             a+='....'
             music_playing.config(text=a)
         color_list = ['red', 'purple', 'gold', 'pink', 'orange', 'black', 'blue']
@@ -317,10 +317,10 @@ class MusicPlayer:
             color_list = ['red', 'purple', 'gold', 'pink', 'orange', 'black', 'blue']
             rand_color = choice(color_list)
             self.i = self.a.index(list_song.get(tkinter.ACTIVE))
-            if len(list_song.get(tkinter.ACTIVE))<=30:
+            if len(list_song.get(tkinter.ACTIVE))<=36:
                 music_playing.config(text=list_song.get(tkinter.ACTIVE), fg=rand_color)
             else:
-                a = list_song.get(tkinter.ACTIVE)[:30]
+                a = list_song.get(tkinter.ACTIVE)[:36]
                 a+='....'
                 music_playing.config(text=a, fg=rand_color)
             if self.p_unp == 'Resume':
